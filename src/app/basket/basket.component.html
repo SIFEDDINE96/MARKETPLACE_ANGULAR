@@ -1,0 +1,30 @@
+<div id="sidebar">
+  <div *ngFor="let selection of data" style="margin: 10px 5px">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title>{{selection.item.title | uppercase}}</mat-card-title>
+          <mat-card-subtitle>{{selection.item.price | currency: 'USD': 'symbol'}}</mat-card-subtitle>
+          <img mat-card-sm-image [src]="selection.item.image" [alt]="selection.item.title">
+        </mat-card-title-group>
+      </mat-card-header>
+      <mat-card-content>
+        <div style="display: flex; flex-direction: column; align-content: center">
+          <div style="margin-bottom: 10px">
+            <button (click)="reduceQuantity(selection.item)" mat-mini-fab matTooltip="Reduce the quantity" color="warn" aria-label="Example mini fab with a heart icon">
+              -
+            </button>
+            ( {{ selection.quantity }} )
+            <button (click)="addQuantity(selection.item)" mat-mini-fab matTooltip="Add quantity" color="primary" aria-label="Example mini fab with a heart icon">
+              +
+            </button>
+          </div>
+          <div>
+            <p>Total : {{selection.item.price*selection.quantity | currency: 'USD': 'symbol'}}</p>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+

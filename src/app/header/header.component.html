@@ -1,0 +1,46 @@
+ <mat-toolbar>
+    <span>
+      <a class="element" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        Marketplace
+      </a>
+    </span>
+    <span class="example-spacer"></span>
+    <span>
+      <a class="element" routerLink="/" routerLinkActive="active">
+        Catégories
+      </a>
+    </span>
+    <span>
+      <a class="element" routerLink="/" routerLinkActive="active">
+        Nouveautés
+      </a>
+    </span>
+    <span>
+      <a class="element" routerLink="/" routerLinkActive="active">
+        Contactez-nous
+      </a>
+    </span>
+    <span>
+      <button class="sidenav-button" (click)="inputSideNav.toggle()" mat-raised-button color="warn">
+        Panier
+        <span matBadge="{{cardItems.length}}" matBadgeOverlap="false"></span>
+      </button>
+    </span>
+  </mat-toolbar>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
